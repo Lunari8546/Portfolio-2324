@@ -4,8 +4,11 @@ export default defineNuxtConfig({
       title: 'ArizLunari'
     }
   },
+  build: {
+    transpile: ['three']
+  },
   modules: [
     '@nuxt/image',
     '@unocss/nuxt'
   ]
-})
+});

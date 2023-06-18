@@ -10,14 +10,14 @@ canvas {
 
 <script setup lang="ts">
 import {
-  Camera,
+  Camera, Color,
   PerspectiveCamera,
   Scene,
   WebGLRenderer,
-  PlaneGeometry, WireframeGeometry, LineSegments
+  PlaneGeometry, Mesh, ShaderMaterial, DoubleSide, Vector4
 } from 'three';
 
-import { OrbitControls } from 'three/addons/controls/OrbitControls';
+import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 
 const experience: Ref<HTMLCanvasElement | null> = ref(null);
 
@@ -27,19 +27,175 @@ const aspectRatio = computed(() => width / height);
 
 const scene = new Scene();
 const camera = new PerspectiveCamera(
-  75, aspectRatio.value, 0.1, 1000
+  50, aspectRatio.value, 0.001, 1000
 );
 
 function initScene() {
   scene.add(camera);
 
-  camera.position.set(0, 0, 2);
+  camera.position.set(0, 0, 0.2);
 };
+
+let time = Math.random();
+
+let material: ShaderMaterial;
+
+const palette = [
+  new Color(0xD27685),
+  new Color(0x9E4784),
+  new Color(0x66347F),
+  new Color(0x37306B)
+];
 
 function initObjects() {
   const objects = [
-    new LineSegments(
-      new WireframeGeometry( new PlaneGeometry(1, 1, 10, 10) )
+    new Mesh(
+      new PlaneGeometry(2, 2, 300, 300),
+      material = new ShaderMaterial({
+        side: DoubleSide,
+        uniforms: {
+          time: { value: 0 },
+          uColor: { value: palette }
+        },
+        vertexShader: `
+          uniform float time;
+          uniform vec3 uColor[4];
+
+          varying vec2 vUv;
+          varying vec3 vColor;
+          varying vec3 vPosition;
+
+          //	Simplex 3D Noise
+          //	by Ian McEwan, Ashima Arts
+
+          vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
+          vec4 taylorInvSqrt(vec4 r){return 1.79284291400159 - 0.85373472095314 * r;}
+
+          float snoise(vec3 v){
+            const vec2  C = vec2(1.0/6.0, 1.0/3.0) ;
+            const vec4  D = vec4(0.0, 0.5, 1.0, 2.0);
+
+            // First corner
+            vec3 i  = floor(v + dot(v, C.yyy) );
+            vec3 x0 =   v - i + dot(i, C.xxx) ;
+
+            // Other corners
+            vec3 g = step(x0.yzx, x0.xyz);
+            vec3 l = 1.0 - g;
+            vec3 i1 = min( g.xyz, l.zxy );
+            vec3 i2 = max( g.xyz, l.zxy );
+
+            //  x0 = x0 - 0. + 0.0 * C
+            vec3 x1 = x0 - i1 + 1.0 * C.xxx;
+            vec3 x2 = x0 - i2 + 2.0 * C.xxx;
+            vec3 x3 = x0 - 1. + 3.0 * C.xxx;
+
+            // Permutations
+            i = mod(i, 289.0 );
+            vec4 p = permute( permute( permute(
+              i.z + vec4(0.0, i1.z, i2.z, 1.0 ))
+              + i.y + vec4(0.0, i1.y, i2.y, 1.0 ))
+              + i.x + vec4(0.0, i1.x, i2.x, 1.0 ));
+
+            // Gradients
+            // ( N*N points uniformly over a square, mapped onto an octahedron.)
+            float n_ = 1.0/7.0; // N=7
+            vec3  ns = n_ * D.wyz - D.xzx;
+
+            vec4 j = p - 49.0 * floor(p * ns.z *ns.z);  //  mod(p,N*N)
+
+            vec4 x_ = floor(j * ns.z);
+            vec4 y_ = floor(j - 7.0 * x_ );    // mod(j,N)
+
+            vec4 x = x_ *ns.x + ns.yyyy;
+            vec4 y = y_ *ns.x + ns.yyyy;
+            vec4 h = 1.0 - abs(x) - abs(y);
+
+            vec4 b0 = vec4( x.xy, y.xy );
+            vec4 b1 = vec4( x.zw, y.zw );
+
+            vec4 s0 = floor(b0)*2.0 + 1.0;
+            vec4 s1 = floor(b1)*2.0 + 1.0;
+            vec4 sh = -step(h, vec4(0.0));
+
+            vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy ;
+            vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww ;
+
+            vec3 p0 = vec3(a0.xy,h.x);
+            vec3 p1 = vec3(a0.zw,h.y);
+            vec3 p2 = vec3(a1.xy,h.z);
+            vec3 p3 = vec3(a1.zw,h.w);
+
+            //Normalise gradients
+            vec4 norm = taylorInvSqrt(vec4(dot(p0,p0), dot(p1,p1), dot(p2, p2), dot(p3,p3)));
+            p0 *= norm.x;
+            p1 *= norm.y;
+            p2 *= norm.z;
+            p3 *= norm.w;
+
+            // Mix final noise value
+            vec4 m = max(0.6 - vec4(dot(x0,x0), dot(x1,x1), dot(x2,x2), dot(x3,x3)), 0.0);
+            m = m * m;
+            return 42.0 * dot( m*m, vec4( dot(p0,x0), dot(p1,x1),
+              dot(p2,x2), dot(p3,x3) ) );
+          }
+
+          void main() {
+            vec2 noiseCoord = uv * vec2(3, 4);
+
+            float tilt = -0.8 * uv.y;
+            float incline = uv.x * 0.1;
+            float torsion = incline * mix(-0.25, 0.25, uv.y);
+
+            float noise = snoise(
+              vec3(
+                noiseCoord.x + time * 3.0,
+                noiseCoord.y,
+                time * 10.0
+              )
+            );
+
+            noise = max(0.0, noise);
+
+            vec3 pos = vec3(
+              position.x,
+              position.y,
+              position.z + noise * 0.3 + tilt + incline + torsion
+            );
+
+            vColor = uColor[3];
+
+            for (int i = 0; i < 3; i++) {
+              float noiseFlow = 5.0 + float(i) * 0.3;
+              float noiseSpeed = 10.0 + float(i) * 0.3;
+
+              float noiseSeed = 1.0 + float(i) * 1.0;
+              vec2 noiseFrequency = vec2(1, 1.4);
+
+              float noise = snoise(
+                vec3(
+                  noiseCoord.x * noiseFrequency.x + time * noiseFlow,
+                  noiseCoord.y * noiseFrequency.y,
+                  time * noiseSpeed + noiseSeed
+                )
+              );
+
+              vColor = mix(vColor, uColor[i], noise);
+            }
+
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1);
+          }
+        `,
+        fragmentShader: `
+          varying vec2 vUv;
+          varying vec3 vColor;
+
+          void main() {
+            gl_FragColor = vec4(vColor, 1);
+          }
+        `
+      })
     )
   ];
 
@@ -56,13 +212,9 @@ function updateCamera() {
 
 let renderer: WebGLRenderer;
 
-let controls: OrbitControls;
-
 function initRenderer() {
   if (experience.value) {
     renderer = new WebGLRenderer({ canvas: experience.value });
-    
-    controls = new OrbitControls(camera, renderer.domElement);
 
     updateRenderer();
   };
@@ -71,8 +223,7 @@ function initRenderer() {
 function updateRenderer() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
-  
-  controls.update();
+  renderer.setClearColor(0xf5efe6, 1);
   
   renderer.render(scene, camera);
 };
@@ -91,6 +242,9 @@ onMounted(() => {
 });
 
 const draw = () => {
+  time += 0.0002;
+  material.uniforms.time.value = time;
+
   updateRenderer();
 
   requestAnimationFrame(draw);
