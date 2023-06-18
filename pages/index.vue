@@ -1,3 +1,5 @@
 <template>
-  <HelloWorld />
+  <ClientOnly>
+    <Hero />
+  </ClientOnly>
 </template>
