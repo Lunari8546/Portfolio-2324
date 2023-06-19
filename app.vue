@@ -12,7 +12,7 @@
 * {
   @apply m-0 p-0 box-border;
   @apply font-sans text-violet-100;
-  @apply select-none;
+  @apply select-none outline-none;
 }
 
 a {
@@ -21,6 +21,10 @@ a {
 
 hr {
   @apply max-w-2xl;
+}
+
+.underlined {
+  @apply underline;
 }
 </style>
 

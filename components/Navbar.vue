@@ -6,7 +6,6 @@
     <nav>
       <NuxtLink to="/">biography.</NuxtLink>
       <NuxtLink to="/">projects.</NuxtLink>
-      <NuxtLink to="/">journals.</NuxtLink>
     </nav>
   </header>
 </template>

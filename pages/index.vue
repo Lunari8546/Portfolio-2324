@@ -8,7 +8,4 @@
   <Section heading="projects">
     <p>W.I.P</p>
   </Section>
-  <Section heading="journals">
-    <p>W.I.P</p>
-  </Section>
 </template>
