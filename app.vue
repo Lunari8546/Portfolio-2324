@@ -14,4 +14,8 @@
 a {
   @apply decoration-none lowercase;
 }
+
+hr {
+  @apply max-w-6xl;
+}
 </style>

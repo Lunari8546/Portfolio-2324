@@ -5,18 +5,22 @@
 </template>
 
 <style scoped lang="postcss">
+.hero {
+  @apply h-screen overflow-hidden;
+}
+
 canvas {
-  @apply fixed t-0 l-0 -z-1;
+  @apply t-0 l-0 -z-1;
 }
 </style>
 
 <script setup lang="ts">
 import {
   Camera, Color,
-  PerspectiveCamera,
-  Scene,
-  WebGLRenderer,
-  PlaneGeometry, Mesh, ShaderMaterial, DoubleSide, Vector4
+  Mesh,
+  PerspectiveCamera, PlaneGeometry,
+  Scene, ShaderMaterial,
+  WebGLRenderer
 } from 'three';
 
 const experience: Ref<HTMLCanvasElement | null> = ref(null);
@@ -222,7 +226,6 @@ function initRenderer() {
 function updateRenderer() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setClearColor(0xf5efe6, 1);
 
   renderer.render(scene, camera);
 };
