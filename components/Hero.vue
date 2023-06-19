@@ -1,10 +1,12 @@
 <template>
-  <canvas ref="experience" />
+  <div class="hero">
+    <canvas ref="experience" />
+  </div>
 </template>
 
 <style scoped lang="postcss">
 canvas {
-  @apply fixed t-0 l-0;
+  @apply fixed t-0 l-0 -z-1;
 }
 </style>
 
@@ -16,8 +18,6 @@ import {
   WebGLRenderer,
   PlaneGeometry, Mesh, ShaderMaterial, DoubleSide, Vector4
 } from 'three';
-
-import { CSS2DRenderer } from 'three/addons/renderers/CSS2DRenderer.js';
 
 const experience: Ref<HTMLCanvasElement | null> = ref(null);
 
@@ -50,9 +50,8 @@ const palette = [
 function initObjects() {
   const objects = [
     new Mesh(
-      new PlaneGeometry(2, 2, 300, 300),
+      new PlaneGeometry(1.5, 1.5, 300, 300),
       material = new ShaderMaterial({
-        side: DoubleSide,
         uniforms: {
           time: { value: 0 },
           uColor: { value: palette }
@@ -224,7 +223,7 @@ function updateRenderer() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setClearColor(0xf5efe6, 1);
-  
+
   renderer.render(scene, camera);
 };
 
