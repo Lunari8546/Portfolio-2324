@@ -749,6 +749,11 @@
     estree-walker "^2.0.2"
     picomatch "^2.3.1"
 
+"@studio-freight/lenis@1.0.12":
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/@studio-freight/lenis/-/lenis-1.0.12.tgz#819792142d6883516d50c60ef07f75a5730638f2"
+  integrity sha512-iN3JQ6qJVc+L7vh8NjlDibw9dvjjifvlJ+s0UAkfwty+vW9MJxRfszb5X/eAhcbDLZW6MlvjRHoH9WSQH3J8eA==
+
 "@trysound/sax@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@trysound/sax/-/sax-0.2.0.tgz#cccaab758af56761eb7bf37af6f03f326dd798ad"
@@ -2872,6 +2877,13 @@ locate-path@^6.0.0:
   integrity sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==
   dependencies:
     p-locate "^5.0.0"
+
+locomotive-scroll@^5.0.0-beta.8:
+  version "5.0.0-beta.8"
+  resolved "https://registry.yarnpkg.com/locomotive-scroll/-/locomotive-scroll-5.0.0-beta.8.tgz#1c336020b77eba37c75991edd2c5995819e85165"
+  integrity sha512-4Nq12voKr5719aaySZg3FX/gQKQIAaAC4NkBiU27aKEKFnYcTeOB1r8VO5bGpEIOGQo94wsiJQNZuRb3TsxjHA==
+  dependencies:
+    "@studio-freight/lenis" "1.0.12"
 
 lodash.debounce@^4.0.8:
   version "4.0.8"

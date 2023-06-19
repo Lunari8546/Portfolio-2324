@@ -2,13 +2,13 @@
   <ClientOnly>
     <Hero />
   </ClientOnly>
-  <Section heading="about">
-    <p>Lorem ispum...</p>
+  <Section heading="biography">
+    <p>W.I.P</p>
   </Section>
-  <Section heading="featured projects">
-    <p>Lorem ispum...</p>
+  <Section heading="projects">
+    <p>W.I.P</p>
   </Section>
-  <Section heading="featured journals">
-    <p>Lorem ispum...</p>
+  <Section heading="journals">
+    <p>W.I.P</p>
   </Section>
 </template>

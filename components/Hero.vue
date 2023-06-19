@@ -1,6 +1,10 @@
 <template>
   <div class="hero">
     <canvas ref="experience" />
+    <div class="intro">
+      <h1 class="title">Frontend Developer,</h1>
+      <p class="subtitle">based in Hong Kong.</p>
+    </div>
   </div>
 </template>
 
@@ -10,7 +14,20 @@
 }
 
 canvas {
-  @apply t-0 l-0 -z-1;
+  @apply fixed t-0 l-0 -z-1;
+}
+
+.intro {
+  @apply flex justify-center items-center flex-col;
+  @apply h-screen italic;
+}
+
+.title {
+  @apply text-8xl mb-2;
+}
+
+.subtitle {
+  @apply text-4xl;
 }
 </style>
 

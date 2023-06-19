@@ -10,8 +10,9 @@
 
 <style scoped lang="postcss">
 section {
-  @apply min-h-3xl bg-dark-900;
-  @apply px-24 py-18;
+  @apply min-h-4xl p-24;
+
+  background-color: rgba(8, 8, 8, 0.6);
 }
 
 .info {
