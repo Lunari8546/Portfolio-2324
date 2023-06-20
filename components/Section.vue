@@ -1,16 +1,18 @@
 <template>
-  <section>
-    <div class="info" :id=heading>
+  <section :id=heading>
+    <div class="info">
       <h2># {{ heading }}.</h2>
       <hr />
     </div>
-    <slot />
+    <div class="content">
+      <slot />
+    </div>
   </section>
 </template>
 
 <style scoped lang="postcss">
 section {
-  @apply min-h-4xl p-24;
+  @apply min-h-screen p-24;
 
   background-color: rgba(8, 8, 8, 0.6);
 }
@@ -26,7 +28,7 @@ section:last-of-type {
 }
 
 .info {
-  @apply mb-6;
+  @apply mb-12;
 }
 
 .info h2 {

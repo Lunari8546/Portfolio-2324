@@ -88,10 +88,7 @@ function scrollTo(el) {
   import('locomotive-scroll').then(module => {
     const locomotiveScroll = new module.default();
 
-    locomotiveScroll.scrollTo(
-      '#' + target,
-      { offset: -120 }
-    );
+    locomotiveScroll.scrollTo('#' + target);
   });
 };
 </script>

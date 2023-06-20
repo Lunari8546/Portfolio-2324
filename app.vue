@@ -29,6 +29,17 @@ p {
   @apply opacity-40;
 }
 
+.btn {
+  @apply bg-transparent cursor-pointer transition-colors;
+  @apply w-[20vw] mx-6 py-6;
+  @apply text-3xl lowercase;
+  @apply border-b-solid border-b-1 border-rd;
+}
+
+.btn:hover {
+  @apply bg-violet-100 text-dark-900;
+}
+
 .hidden {
   @apply important-hidden;
 }
