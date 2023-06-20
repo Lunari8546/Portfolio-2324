@@ -1,12 +1,11 @@
 <template>
-  <header class="navbar">
+  <header class="navbar" ref="navbar">
     <NuxtLink to="/">
       <h1 class="brand">arizlunari.</h1>
     </NuxtLink>
     <nav>
-      <NuxtLink to="/">about.</NuxtLink>
-      <NuxtLink to="/">projects.</NuxtLink>
-      <NuxtLink to="/">journals.</NuxtLink>
+      <a @click="scrollTo">biography.</a>
+      <a @click="scrollTo">projects.</a>
     </nav>
   </header>
 </template>
@@ -34,13 +33,65 @@ nav a:last-child {
   @apply mr-0;
 }
 
-@screen lt-lg {
+@screen lt-xl {
   .navbar {
-    @apply px-18;
+    @apply px-12;
   }
 
   nav {
     @apply hidden;
   }
 }
+
+@screen lt-md {
+  .navbar {
+    @apply py-12;
+  }
+
+  .brand {
+    @apply text-2xl;
+  }
+}
 </style>
+
+<script setup lang="ts">
+const navbar: Ref<HTMLHeaderElement | null> = ref(null);
+
+let showNavbar = true;
+let lastScrollPosition = 0;
+
+onMounted(() => {
+  window.addEventListener('scroll', onScroll);
+});
+
+function onScroll() {
+  const currentScrollPosition = window.pageYOffset;
+
+  if (currentScrollPosition < 0) { return; };
+
+  if (Math.abs(currentScrollPosition - lastScrollPosition) < 60) { return };
+
+  showNavbar = currentScrollPosition < lastScrollPosition;
+
+  lastScrollPosition = currentScrollPosition;
+
+  if (!showNavbar) {
+    navbar.value.classList.add('hidden');
+  } else {
+    navbar.value.classList.remove('hidden');
+  };
+}
+
+function scrollTo(el) {
+  const target = el.target.innerHTML.slice(0, -1);
+
+  import('locomotive-scroll').then(module => {
+    const locomotiveScroll = new module.default();
+
+    locomotiveScroll.scrollTo(
+      '#' + target,
+      { offset: -120 }
+    );
+  });
+};
+</script>

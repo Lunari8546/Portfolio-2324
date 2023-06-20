@@ -1,22 +1,63 @@
 <template>
   <div class="hero">
     <canvas ref="experience" />
+    <div class="intro">
+      <h1 class="title">Frontend Developer,</h1>
+      <p class="subtitle">based in Hong Kong.</p>
+    </div>
   </div>
 </template>
 
 <style scoped lang="postcss">
+.hero {
+  @apply h-screen overflow-hidden;
+}
+
 canvas {
   @apply fixed t-0 l-0 -z-1;
+}
+
+.intro {
+  @apply flex justify-center items-center flex-col;
+  @apply mx-18 h-screen text-center italic;
+}
+
+.title {
+  @apply text-8xl mb-2;
+}
+
+.subtitle {
+  @apply text-4xl;
+}
+
+@screen lt-xl {
+  .title {
+    @apply mb-4;
+  }
+}
+
+@screen lt-md {
+  .intro {
+    @apply mx-12;
+  }
+
+  .title {
+    @apply text-6xl;
+  }
+
+  .subtitle {
+    @apply text-2xl;
+  }
 }
 </style>
 
 <script setup lang="ts">
 import {
   Camera, Color,
-  PerspectiveCamera,
-  Scene,
-  WebGLRenderer,
-  PlaneGeometry, Mesh, ShaderMaterial, DoubleSide, Vector4
+  Mesh,
+  PerspectiveCamera, PlaneGeometry,
+  Scene, ShaderMaterial,
+  WebGLRenderer
 } from 'three';
 
 const experience: Ref<HTMLCanvasElement | null> = ref(null);
@@ -222,7 +263,6 @@ function initRenderer() {
 function updateRenderer() {
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setClearColor(0xf5efe6, 1);
 
   renderer.render(scene, camera);
 };
