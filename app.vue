@@ -29,6 +29,10 @@ p {
   @apply opacity-40;
 }
 
+.hidden {
+  @apply important-hidden;
+}
+
 .underlined {
   @apply underline;
 }

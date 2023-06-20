@@ -10,7 +10,7 @@
 
 <style scoped lang="postcss">
 section {
-  @apply min-h-3xl p-24;
+  @apply min-h-4xl p-24;
 
   background-color: rgba(8, 8, 8, 0.6);
 }

@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar">
+  <header class="navbar" ref="navbar">
     <NuxtLink to="/">
       <h1 class="brand">arizlunari.</h1>
     </NuxtLink>
@@ -55,6 +55,33 @@ nav a:last-child {
 </style>
 
 <script setup lang="ts">
+const navbar: Ref<HTMLHeaderElement | null> = ref(null);
+
+let showNavbar = true;
+let lastScrollPosition = 0;
+
+onMounted(() => {
+  window.addEventListener('scroll', onScroll);
+});
+
+function onScroll() {
+  const currentScrollPosition = window.pageYOffset;
+
+  if (currentScrollPosition < 0) { return; };
+
+  if (Math.abs(currentScrollPosition - lastScrollPosition) < 60) { return };
+
+  showNavbar = currentScrollPosition < lastScrollPosition;
+
+  lastScrollPosition = currentScrollPosition;
+
+  if (!showNavbar) {
+    navbar.value.classList.add('hidden');
+  } else {
+    navbar.value.classList.remove('hidden');
+  };
+}
+
 function scrollTo(el) {
   const target = el.target.innerHTML.slice(0, -1);
 
