@@ -5,6 +5,8 @@
 </template>
 
 <style lang="postcss">
+@import 'node_modules/locomotive-scroll/dist/locomotive-scroll';
+
 ::-webkit-scrollbar {
   @apply hidden;
 }
@@ -16,11 +18,15 @@
 }
 
 a {
-  @apply decoration-none lowercase;
+  @apply decoration-none cursor-pointer lowercase;
 }
 
 hr {
-  @apply max-w-2xl;
+  @apply max-w-lg;
+}
+
+p {
+  @apply opacity-40;
 }
 
 .underlined {
@@ -29,10 +35,9 @@ hr {
 </style>
 
 <script setup lang="ts">
-import LocomotiveScroll from 'locomotive-scroll';
-
-// unavailable until the dependency updates.
-// onMounted(() => {
-  // const scroll = new LocomotiveScroll();
-// });
+onMounted(() => {
+  import('locomotive-scroll').then(module => {
+    const locomotiveScroll = new module.default();
+  });
+});
 </script>

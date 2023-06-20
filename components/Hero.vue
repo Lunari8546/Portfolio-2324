@@ -19,7 +19,7 @@ canvas {
 
 .intro {
   @apply flex justify-center items-center flex-col;
-  @apply h-screen italic;
+  @apply mx-18 h-screen text-center italic;
 }
 
 .title {
@@ -28,6 +28,26 @@ canvas {
 
 .subtitle {
   @apply text-4xl;
+}
+
+@screen lt-xl {
+  .title {
+    @apply mb-4;
+  }
+}
+
+@screen lt-md {
+  .intro {
+    @apply mx-12;
+  }
+
+  .title {
+    @apply text-6xl;
+  }
+
+  .subtitle {
+    @apply text-2xl;
+  }
 }
 </style>
 

@@ -4,8 +4,8 @@
       <h1 class="brand">arizlunari.</h1>
     </NuxtLink>
     <nav>
-      <NuxtLink to="/">biography.</NuxtLink>
-      <NuxtLink to="/">projects.</NuxtLink>
+      <a @click="scrollTo">biography.</a>
+      <a @click="scrollTo">projects.</a>
     </nav>
   </header>
 </template>
@@ -33,13 +33,38 @@ nav a:last-child {
   @apply mr-0;
 }
 
-@screen lt-lg {
+@screen lt-xl {
   .navbar {
-    @apply px-18;
+    @apply px-12;
   }
 
   nav {
     @apply hidden;
   }
 }
+
+@screen lt-md {
+  .navbar {
+    @apply py-12;
+  }
+
+  .brand {
+    @apply text-2xl;
+  }
+}
 </style>
+
+<script setup lang="ts">
+function scrollTo(el) {
+  const target = el.target.innerHTML.slice(0, -1);
+
+  import('locomotive-scroll').then(module => {
+    const locomotiveScroll = new module.default();
+
+    locomotiveScroll.scrollTo(
+      '#' + target,
+      { offset: -120 }
+    );
+  });
+};
+</script>
