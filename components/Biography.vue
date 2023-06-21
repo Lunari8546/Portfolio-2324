@@ -54,7 +54,7 @@
 }
 
 p:not(.note) {
-  @apply text-2xl opacity-100 mb-6;
+  @apply text-2xl opacity-100 mb-12;
 }
 
 .splitscreen {
@@ -77,7 +77,15 @@ p:not(.note) {
   @apply mx-0 w-full text-center;
 }
 
+.experiences a:last-child {
+  @apply mb-0;
+}
+
 @screen lt-xl {
+  *:not(section) {
+    @apply mb-6;
+  }
+
   .splitscreen {
     @apply flex-col;
   }

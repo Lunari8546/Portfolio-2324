@@ -12,7 +12,7 @@
 
 <style scoped lang="postcss">
 section {
-  @apply min-h-screen p-24;
+  @apply min-h-screen px-48 py-36;
 
   background-color: rgba(8, 8, 8, 0.6);
 }
@@ -37,7 +37,7 @@ section:last-of-type {
 
 @screen lt-xl {
   section {
-    @apply px-12;
+    @apply px-24;
   }
 
   .info h2 {
@@ -50,6 +50,10 @@ section:last-of-type {
 }
 
 @screen lt-md {
+  section {
+    @apply px-12 py-18;
+  }
+
   section:first-of-type {
     border-top-left-radius: 3rem;
     border-top-right-radius: 3rem;
