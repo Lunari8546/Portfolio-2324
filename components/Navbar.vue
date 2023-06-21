@@ -13,7 +13,7 @@
 <style scoped lang="postcss">
 .navbar {
   @apply fixed flex justify-between items-center;
-  @apply px-24 py-18;
+  @apply px-48 py-18;
   @apply w-screen max-w-screen;
 }
 
@@ -35,7 +35,7 @@ nav a:last-child {
 
 @screen lt-xl {
   .navbar {
-    @apply px-12;
+    @apply px-24;
   }
 
   nav {
@@ -45,7 +45,7 @@ nav a:last-child {
 
 @screen lt-md {
   .navbar {
-    @apply py-12;
+    @apply p-12;
   }
 
   .brand {
@@ -88,10 +88,7 @@ function scrollTo(el) {
   import('locomotive-scroll').then(module => {
     const locomotiveScroll = new module.default();
 
-    locomotiveScroll.scrollTo(
-      '#' + target,
-      { offset: -120 }
-    );
+    locomotiveScroll.scrollTo('#' + target);
   });
 };
 </script>

@@ -5,11 +5,11 @@
       <span class="underlined">awesome</span>.
     </h1>
     <div class="contact">
-      <NuxtLink to="https://www.instagram.com/lunari.cr/" target="_blank">
+      <NuxtLink class="btn" to="https://www.instagram.com/lunari.cr/" target="_blank">
         instagram.
       </NuxtLink>
-      <NuxtLink to="mailto:arizlunari@protonmail.com">email.</NuxtLink>
-      <NuxtLink to="https://github.com/Lunari8546" target="_blank">
+      <NuxtLink class="btn" to="mailto:arizlunari@protonmail.com">email.</NuxtLink>
+      <NuxtLink class="btn" to="https://github.com/Lunari8546" target="_blank">
         github.
       </NuxtLink>
     </div>
@@ -32,17 +32,6 @@ footer {
 
 .contact {
   @apply flex justify-between my-36;
-}
-
-.contact a {
-  @apply bg-transparent cursor-pointer transition-colors;
-  @apply w-[20vw] mx-6 py-6;
-  @apply text-3xl lowercase;
-  @apply border-b-solid border-b-1 border-rd;
-}
-
-.contact a:hover {
-  @apply bg-violet-100 text-dark-900;
 }
 
 .copyright {
