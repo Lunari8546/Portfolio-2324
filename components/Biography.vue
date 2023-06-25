@@ -74,7 +74,7 @@ p:not(.note) {
 }
 
 .experiences a {
-  @apply mx-0 w-full text-center;
+  @apply mx-0 w-full text-center text-2xl;
 }
 
 .experiences a:last-child {
@@ -91,7 +91,7 @@ p:not(.note) {
   }
 
   .experiences a {
-    @apply text-2xl;
+    @apply text-xl;
   }
 }
 </style>
