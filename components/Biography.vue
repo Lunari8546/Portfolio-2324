@@ -1,39 +1,41 @@
 <template>
   <Section heading="biography">
-    <p>
-      Studying computer science and passionate in softwares,
-      I've been trying to craft visually-stunning experiences
-      since the early days of my development journey.
-      Creating these experiences were really satisifying and it fills in my inner-void.
-      I tried making games and apps, though in my opinion,
-      it's far more complex than websites.
-    </p>
-    <p>
-      I started the joruney when I was around 11,
-      watched numerous of YouTube tutorials to become a self-taught developer.
-      Luckily it paid off,
-      and I can finally build projects with my bare hands... and with the docs.
-    </p>
-    <p>
-      Besides than developing,
-      I was also addicted to video games,
-      digging useless stuff online,
-      and procrastinating on important matters.
-    </p>
-    <p>
-      Also feel free to check out my
-      <NuxtLink class="underlined" to="https://www.instagram.com/lunari.cr/">Instagram</NuxtLink>
-      page,
-      from time to time I will post some of my poster designs, or random pictures I've took.
-      You could also say hello to me there rather than using emails.
-    </p>
-    <p class="note">
-      (Not much was written as I suck at writing about-me's. And I hate doing maths.)
-    </p>
+    <div class="paragraphs">
+      <p>
+        Studying computer science and passionate in softwares,
+        I've been trying to craft visually-stunning experiences
+        since the early days of my development journey.
+        Creating these experiences were really satisifying and it fills in my inner-void.
+      </p>
+      <p>
+        I started the joruney when I was around 11,
+        watched numerous of YouTube tutorials to become a self-taught developer.
+        Luckily it paid off,
+        and I can finally build projects with my own hands...
+        and with the guidance of documentations.
+      </p>
+      <p>
+        Besides than developing,
+        I was also addicted to video games,
+        digging useless stuff online,
+        and procrastinating on important matters.
+      </p>
+      <p>
+        Feel free to check out my
+        <NuxtLink class="underlined" to="https://www.instagram.com/lunari.cr/">Instagram</NuxtLink>
+        page,
+        from time to time I will post some of my poster designs, or random pictures I've took.
+        You could also say hello to me there rather than using emails.
+      </p>
+      <p class="note">
+        (Not much was written as I suck at writing about-me's. And I hate doing maths.)
+      </p>
+    </div>
     <hr />
     <div class="splitscreen">
       <div class="awards">
-        <h3>awards: CURRENTLY NONE.</h3>
+        <h3>awards:</h3>
+        <p>N/A</p>
       </div>
       <div class="experiences">
         <h3>experiences:</h3>

@@ -28,12 +28,18 @@ span {
   @apply absolute right-0 bottom-0;
   @apply mb-6 mr-6 opacity-40;
 }
+
+@screen lt-md {
+  span {
+    @apply text-xl;
+  }
+}
 </style>
 
 <script setup lang="ts">
 const projects = [
   {
-    name: 'uniquad',
+    name: 'uniquad.vercel.app',
     url: 'https://github.com/Lunari8546/Uniquad'
   }
 ];
@@ -43,8 +49,10 @@ const projectList = ref([]);
 onMounted(() => {
   for (let i = 0; i < projectList.value.length; i++) {
     projectList.value[i].style.background = `
-      linear-gradient(rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.3)),
+      linear-gradient(
+        rgba(0, 0, 0, 0) 90%,
+        rgba(0, 0, 0, 0.9)
+      ),
       url(./images/${ projects[i].name }.png)
     `;
 
