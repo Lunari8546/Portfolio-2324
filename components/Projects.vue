@@ -30,6 +30,10 @@ span {
 }
 
 @screen lt-md {
+  a {
+    @apply h-xl;
+  }
+
   span {
     @apply text-xl;
   }

@@ -15,7 +15,7 @@
     </div>
     <p class="copyright">© 2023 ArizLunari, All Rights Reserved.</p>
     <p class="credits">
-      Credits to: Nuxt 3, UnoCSS, ThreeJS, Locomotive Scroll 5, GSAP, Fontshare, and Vercel.
+      Credits to: Nuxt 3, UnoCSS, ThreeJS, Locomotive Scroll 5, Fontshare, and Vercel.
     </p>
   </footer>
 </template>

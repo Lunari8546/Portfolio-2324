@@ -22,8 +22,10 @@
       </p>
       <p>
         Feel free to check out my
-        <NuxtLink class="underlined" to="https://www.instagram.com/lunari.cr/">Instagram</NuxtLink>
-        page,
+        <NuxtLink
+          class="underlined"
+          to="https://www.instagram.com/lunari.cr/"
+          target="_blank">Instagram</NuxtLink> page,
         from time to time I will post some of my poster designs, or random pictures I've took.
         You could also say hello to me there rather than using emails.
       </p>
@@ -39,10 +41,10 @@
       </div>
       <div class="experiences">
         <h3>experiences:</h3>
-        <NuxtLink class="btn" to="https://github.com/SHELTER-ZONE">
+        <NuxtLink class="btn" to="https://github.com/SHELTER-ZONE" target="_blank">
           shelter zone: frontend developer (2021 - present)
         </NuxtLink>
-        <NuxtLink class="btn" to="https://github.com/TeamHarTex">
+        <NuxtLink class="btn" to="https://github.com/TeamHarTex" target="_blank">
           team hartex: frontend developer (2022 - present)
         </NuxtLink>
       </div>
@@ -55,7 +57,7 @@
   @apply mb-12;
 }
 
-p:not(.note) {
+.paragraphs p:not(.note) {
   @apply text-2xl opacity-100 mb-12;
 }
 
@@ -94,6 +96,16 @@ p:not(.note) {
 
   .experiences a {
     @apply text-xl;
+  }
+}
+
+@screen lt-md {
+  .paragraphs p:not(.note) {
+    @apply text-xl;
+  }
+
+  .note {
+    @apply text-sm;
   }
 }
 </style>

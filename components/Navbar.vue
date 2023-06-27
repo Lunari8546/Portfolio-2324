@@ -77,8 +77,10 @@ function onScroll() {
 
   if (!showNavbar) {
     navbar.value.style.opacity = 0;
+    navbar.value.style.pointerEvents = 'none';
   } else {
     navbar.value.style.opacity = 100;
+    navbar.value.style.pointerEvents = 'auto';
   };
 }
 
