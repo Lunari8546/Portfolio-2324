@@ -10,5 +10,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
     '@unocss/nuxt'
+  ],
+  plugins: [
+    { src: '~/plugins/vercel.ts', mode: 'client' }
   ]
 });
