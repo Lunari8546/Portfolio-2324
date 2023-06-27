@@ -13,8 +13,8 @@
 <style scoped lang="postcss">
 .navbar {
   @apply fixed flex justify-between items-center;
-  @apply px-48 py-18;
-  @apply w-screen max-w-screen;
+  @apply px-48 py-18 z-99;
+  @apply w-screen max-w-screen transition-opacity;
 }
 
 .brand {
@@ -69,16 +69,18 @@ function onScroll() {
 
   if (currentScrollPosition < 0) { return; };
 
-  if (Math.abs(currentScrollPosition - lastScrollPosition) < 60) { return };
+  if (Math.abs(currentScrollPosition - lastScrollPosition) < 30) { return };
 
   showNavbar = currentScrollPosition < lastScrollPosition;
 
   lastScrollPosition = currentScrollPosition;
 
   if (!showNavbar) {
-    navbar.value.classList.add('hidden');
+    navbar.value.style.opacity = 0;
+    navbar.value.style.pointerEvents = 'none';
   } else {
-    navbar.value.classList.remove('hidden');
+    navbar.value.style.opacity = 100;
+    navbar.value.style.pointerEvents = 'auto';
   };
 }
 

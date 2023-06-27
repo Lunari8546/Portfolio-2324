@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app-template",
+  "name": "portfolio",
   "private": true,
   "scripts": {
     "build": "nuxt build",
