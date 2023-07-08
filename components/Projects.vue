@@ -16,10 +16,10 @@
 
 <style scoped lang="postcss">
 .list {
-  @apply flex;
+  @apply flex flex-col;
 }
 
-a {
+.list a {
   @apply relative m-0 pl-6 b-0;
   @apply w-full h-3xl;
 }
@@ -45,6 +45,10 @@ const projects = [
   {
     name: 'uniquad.vercel.app',
     url: 'https://github.com/Lunari8546/Uniquad'
+  },
+  {
+    name: 'honne.vercel.app',
+    url: 'https://github.com/Lunari8546/Honne'
   }
 ];
 

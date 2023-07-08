@@ -1,7 +1,10 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'ArizLunari'
+      title: 'ArizLunari',
+      meta: [
+        { name: 'description', content: "ArizLunari's portfolio site." }
+      ]
     }
   },
   build: {
