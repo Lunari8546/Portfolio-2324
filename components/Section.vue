@@ -13,18 +13,6 @@
 <style scoped lang="postcss">
 section {
   @apply min-h-screen px-48 py-36;
-
-  background-color: rgba(8, 8, 8, 0.6);
-}
-
-section:first-of-type {
-  border-top-left-radius: 6rem;
-  border-top-right-radius: 6rem;
-}
-
-section:last-of-type {
-  border-bottom-left-radius: 6rem;
-  border-bottom-right-radius: 6rem;
 }
 
 .info {
@@ -52,16 +40,6 @@ section:last-of-type {
 @screen lt-md {
   section {
     @apply px-12 py-18;
-  }
-
-  section:first-of-type {
-    border-top-left-radius: 3rem;
-    border-top-right-radius: 3rem;
-  }
-
-  section:last-of-type {
-    border-bottom-left-radius: 3rem;
-    border-bottom-right-radius: 3rem;
   }
 
   .info h2 {
