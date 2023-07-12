@@ -4,8 +4,8 @@
       <h1 class="brand">arizlunari.</h1>
     </NuxtLink>
     <nav>
-      <a @click="scrollTo">biography.</a>
-      <a @click="scrollTo">projects.</a>
+      <NuxtLink>biography.</NuxtLink>
+      <NuxtLink>projects.</NuxtLink>
     </nav>
   </header>
 </template>
@@ -83,14 +83,4 @@ function onScroll() {
     navbar.value.style.pointerEvents = 'auto';
   };
 }
-
-function scrollTo(el) {
-  const target = el.target.innerHTML.slice(0, -1);
-
-  import('locomotive-scroll').then(module => {
-    const locomotiveScroll = new module.default();
-
-    locomotiveScroll.scrollTo('#' + target);
-  });
-};
 </script>
