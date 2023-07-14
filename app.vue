@@ -21,6 +21,10 @@ a {
   @apply decoration-none cursor-pointer lowercase;
 }
 
+body {
+  @apply overflow-x-hidden;
+}
+
 hr {
   @apply max-w-lg;
 }

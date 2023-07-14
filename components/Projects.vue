@@ -54,6 +54,18 @@
   @apply absolute t-0 l-0;
   @apply w-full h-full object-cover;
 }
+
+@screen lt-xl {
+  .list .item .wrapper {
+    @apply hidden;
+  }
+}
+
+@screen lt-md {
+  .list .item {
+    @apply text-xl;
+  }
+}
 </style>
 
 <script setup lang="ts">

@@ -29,9 +29,6 @@
         from time to time I will post some of my poster designs, or random pictures I've took.
         You could also say hello to me there rather than using emails.
       </p>
-      <p class="note">
-        (Not much was written as I suck at writing about-me's. And I hate doing maths.)
-      </p>
     </div>
     <hr />
     <div class="splitscreen">
