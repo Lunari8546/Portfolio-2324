@@ -8,8 +8,8 @@
         Creating these experiences were really satisifying and it fills in my inner-void.
       </p>
       <p>
-        I started the joruney when I was around 11,
-        watched numerous of YouTube tutorials to become a self-taught developer.
+        I started the journey when I was around 11,
+        watched numerous of tutorials to become a self-taught developer.
         Luckily it paid off,
         and I can finally build projects with my own hands...
         and with the guidance of documentations.
