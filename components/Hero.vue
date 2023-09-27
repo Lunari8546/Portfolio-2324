@@ -3,7 +3,7 @@
     <canvas ref="experience" />
     <div class="intro">
       <h1 class="title">Frontend Developer,</h1>
-      <p class="subtitle">based in Hong Kong.</p>
+      <p class="subtitle">based in Australia.</p>
     </div>
   </div>
 </template>
