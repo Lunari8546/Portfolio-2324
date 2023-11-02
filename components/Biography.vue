@@ -7,7 +7,7 @@
         development journey.
       </p>
       <p>
-        My joruney started when I was around 11, watcheing numerous of tutorials
+        My joruney started when I was around 11, watching numerous of tutorials
         to become a self-taught developer. Eventually... it paid off, and I can
         finally build projects with my own hands... and with the guidance of
         documentations.
