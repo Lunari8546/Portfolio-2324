@@ -1,22 +1,35 @@
 <template>
   <Section heading="projects">
     <div class="list">
-      <NuxtLink class="item btn">
+      <NuxtLink class="item btn" to="http://uniquad.vercel.app" target="_blank">
         <div class="wrapper">
           <div class="inner">
-            <img src="/images/uniquad.vercel.app.png" />
+            <img src="/images/uniquad.png" />
           </div>
         </div>
         Uniquad.
         <p class="year">2023</p>
       </NuxtLink>
-      <NuxtLink class="item btn">
+      <NuxtLink class="item btn" to="https://honne.vercel.app" target="_blank">
         <div class="wrapper">
           <div class="inner">
-            <img src="/images/honne.vercel.app.png" />
+            <img src="/images/honne.png" />
           </div>
         </div>
         Honne.
+        <p class="year">2023</p>
+      </NuxtLink>
+      <NuxtLink
+        class="item btn"
+        to="https://pageofmoths.itch.io/metamorphosis"
+        target="_blank"
+      >
+        <div class="wrapper">
+          <div class="inner">
+            <img src="/images/metamorphosis.png" />
+          </div>
+        </div>
+        Metamorphosis.
         <p class="year">2023</p>
       </NuxtLink>
     </div>
@@ -71,39 +84,43 @@
 <script setup lang="ts">
 const projects = [
   {
-    name: 'uniquad.vercel.app',
-    url: 'https://github.com/Lunari8546/Uniquad'
+    name: "uniquad",
+    url: "https://github.com/Lunari8546/Uniquad",
   },
   {
-    name: 'honne.vercel.app',
-    url: 'https://github.com/Lunari8546/Honne'
-  }
+    name: "honne",
+    url: "https://github.com/Lunari8546/Honne",
+  },
 ];
 
 const projectList = ref([]);
 
-import gsap from 'gsap';
+import gsap from "gsap";
 
 onMounted(() => {
-  gsap.timeline().set('.list', { autoAlpha: 1 })
-    .from('.item', {
+  gsap
+    .timeline()
+    .set(".list", { autoAlpha: 1 })
+    .from(".item", {
       delay: 1,
       duration: 0.85,
       xPercent: 25,
       stagger: 0.095,
       skewY: gsap.utils.wrap([-8, 8]),
-    }).set('.list', { pointerEvents: 'all' });
+    })
+    .set(".list", { pointerEvents: "all" });
 
   gsap.defaults({
     duration: 0.55,
-    ease: 'expo.out'
+    ease: "expo.out",
   });
 
-  const items = document.querySelectorAll('.item');
+  const items = document.querySelectorAll(".item");
 
   items.forEach((item) => {
-    const wrapper = item.querySelector('.wrapper');
-    const wrapperBounds = wrapper.getBoundingClientRect();
+    const wrapper = item.querySelector(".wrapper");
+    const wrapperBounds = wrapper?.getBoundingClientRect();
+
     let itemBounds = item.getBoundingClientRect();
 
     const onMouseEnter = () => {
@@ -111,14 +128,14 @@ onMounted(() => {
         scale: 0.8,
         xPercent: 25,
         yPercent: 25,
-        rotation: -15
+        rotation: -15,
       });
 
       gsap.to(wrapper, {
         opacity: 1,
         scale: 1,
         yPercent: 0,
-        rotation: 0
+        rotation: 0,
       });
     };
 
@@ -128,7 +145,7 @@ onMounted(() => {
         yPercent: -25,
         xPercent: 25,
         scale: 0.8,
-        rotation: -15
+        rotation: -15,
       });
     };
 
@@ -140,13 +157,16 @@ onMounted(() => {
       gsap.to(wrapper, {
         duration: 1.25,
         x: Math.abs(x - itemBounds.left) - wrapperBounds.width / 1.5,
-        y: Math.abs(y - itemBounds.top) - wrapperBounds.height / 1.5 - yOffset * 2
+        y:
+          Math.abs(y - itemBounds.top) -
+          wrapperBounds.height / 1.5 -
+          yOffset * 2,
       });
     };
 
-    item.addEventListener('mouseenter', onMouseEnter);
-    item.addEventListener('mouseleave', onMouseLeave);
-    item.addEventListener('mousemove', onMouseMove);
+    item.addEventListener("mouseenter", onMouseEnter);
+    item.addEventListener("mouseleave", onMouseLeave);
+    item.addEventListener("mousemove", onMouseMove);
   });
 });
 </script>

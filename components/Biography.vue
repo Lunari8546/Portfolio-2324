@@ -2,32 +2,27 @@
   <Section heading="biography">
     <div class="paragraphs">
       <p>
-        Studying computer science and passionate in softwares,
-        I've been trying to craft visually-stunning experiences
-        since the early days of my development journey.
-        Creating these experiences were really satisifying and it fills in my inner-void.
+        Studying computer science and passionate in softwares, I've been trying
+        to craft visually-stunning experiences since the early days of my
+        development journey.
       </p>
       <p>
-        I started the journey when I was around 11,
-        watched numerous of tutorials to become a self-taught developer.
-        Luckily it paid off,
-        and I can finally build projects with my own hands...
-        and with the guidance of documentations.
-      </p>
-      <p>
-        Besides than developing,
-        I was also addicted to video games,
-        digging useless stuff online,
-        and procrastinating on important matters.
+        My joruney started when I was around 11, watcheing numerous of tutorials
+        to become a self-taught developer. Eventually... it paid off, and I can
+        finally build projects with my own hands... and with the guidance of
+        documentations.
       </p>
       <p>
         Feel free to check out my
         <NuxtLink
           class="underlined"
           to="https://www.instagram.com/lunari.cr/"
-          target="_blank">Instagram</NuxtLink> page,
-        from time to time I will post some of my poster designs, or random pictures I've took.
-        You could also say hello to me there rather than using emails.
+          target="_blank"
+          >Instagram</NuxtLink
+        >
+        page, from time to time I will post some of my poster designs, or random
+        pictures I've took. You could also say hello to me there rather than
+        using emails.
       </p>
     </div>
     <hr />
@@ -38,10 +33,18 @@
       </div>
       <div class="experiences">
         <h3>experiences:</h3>
-        <NuxtLink class="btn" to="https://github.com/SHELTER-ZONE" target="_blank">
+        <NuxtLink
+          class="btn"
+          to="https://github.com/SHELTER-ZONE"
+          target="_blank"
+        >
           shelter zone: frontend developer (2021 - present)
         </NuxtLink>
-        <NuxtLink class="btn" to="https://github.com/TeamHarTex" target="_blank">
+        <NuxtLink
+          class="btn"
+          to="https://github.com/TeamHarTex"
+          target="_blank"
+        >
           team hartex: frontend developer (2022 - present)
         </NuxtLink>
       </div>
