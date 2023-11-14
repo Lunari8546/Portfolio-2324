@@ -55,7 +55,7 @@ nav a:last-child {
 </style>
 
 <script setup lang="ts">
-const navbar: Ref<HTMLHeaderElement | null> = ref(null);
+const navbar: Ref<HTMLElement | null> = ref(null);
 
 let showNavbar = true;
 let lastScrollPosition = 0;
@@ -65,22 +65,28 @@ onMounted(() => {
 });
 
 function onScroll() {
-  const currentScrollPosition = window.pageYOffset;
+  const currentScrollPosition = window.scrollY;
 
-  if (currentScrollPosition < 0) { return; };
+  if (currentScrollPosition < 0) {
+    return;
+  }
 
-  if (Math.abs(currentScrollPosition - lastScrollPosition) < 30) { return };
+  if (Math.abs(currentScrollPosition - lastScrollPosition) < 30) {
+    return
+  }
 
   showNavbar = currentScrollPosition < lastScrollPosition;
 
   lastScrollPosition = currentScrollPosition;
 
-  if (!showNavbar) {
-    navbar.value.style.opacity = 0;
-    navbar.value.style.pointerEvents = 'none';
-  } else {
-    navbar.value.style.opacity = 100;
-    navbar.value.style.pointerEvents = 'auto';
-  };
+  if (navbar.value) {
+    if (!showNavbar) {
+      navbar.value.style.opacity = "0";
+      navbar.value.style.pointerEvents = 'none';
+    } else {
+      navbar.value.style.opacity = "100";
+      navbar.value.style.pointerEvents = 'auto';
+    }
+  }
 }
 </script>

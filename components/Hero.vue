@@ -1,6 +1,6 @@
 <template>
   <div class="hero">
-    <canvas ref="experience" />
+    <canvas ref="experience"/>
     <div class="intro">
       <h1 class="title">Frontend Developer,</h1>
       <p class="subtitle">based in Australia.</p>
@@ -63,7 +63,7 @@ import {
 const experience: Ref<HTMLCanvasElement | null> = ref(null);
 
 const width = window.innerWidth,
-      height = window.innerHeight;
+  height = window.innerHeight;
 const aspectRatio = computed(() => width / height);
 
 const scene = new Scene();
@@ -94,8 +94,8 @@ function initObjects() {
       new PlaneGeometry(1.5, 1.5, 300, 300),
       material = new ShaderMaterial({
         uniforms: {
-          time: { value: 0 },
-          uColor: { value: palette }
+          time: {value: 0},
+          uColor: {value: palette}
         },
         vertexShader: `
           uniform float time;
@@ -254,10 +254,11 @@ let renderer: WebGLRenderer;
 
 function initRenderer() {
   if (experience.value) {
-    renderer = new WebGLRenderer({ canvas: experience.value });
+    renderer = new WebGLRenderer({canvas: experience.value});
 
     updateRenderer();
-  };
+  }
+  ;
 };
 
 function updateRenderer() {

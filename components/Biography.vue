@@ -18,14 +18,15 @@
           class="underlined"
           to="https://www.instagram.com/lunari.cr/"
           target="_blank"
-          >Instagram</NuxtLink
+        >Instagram
+        </NuxtLink
         >
         page, from time to time I will post some of my poster designs, or random
         pictures I've took. You could also say hello to me there rather than
         using emails.
       </p>
     </div>
-    <hr />
+    <hr/>
     <div class="splitscreen">
       <div class="awards">
         <h3>awards:</h3>
@@ -57,7 +58,7 @@
   @apply mb-12;
 }
 
-.paragraphs p:not(.note) {
+.paragraphs p {
   @apply text-2xl opacity-100 mb-12;
 }
 
@@ -100,12 +101,8 @@
 }
 
 @screen lt-md {
-  .paragraphs p:not(.note) {
+  .paragraphs p {
     @apply text-xl;
-  }
-
-  .note {
-    @apply text-sm;
   }
 }
 </style>

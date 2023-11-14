@@ -1,7 +1,7 @@
 <template>
   <ClientOnly>
-    <Hero />
+    <Hero/>
   </ClientOnly>
-  <Biography />
-  <Projects />
+  <Biography/>
+  <Projects/>
 </template>

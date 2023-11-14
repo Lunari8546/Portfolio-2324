@@ -3,7 +3,7 @@ export default defineNuxtConfig({
     head: {
       title: 'ArizLunari',
       meta: [
-        { name: 'description', content: "ArizLunari's portfolio site." }
+        {name: 'description', content: "ArizLunari's portfolio."}
       ]
     }
   },
@@ -15,6 +15,6 @@ export default defineNuxtConfig({
     '@unocss/nuxt'
   ],
   plugins: [
-    { src: '~/plugins/vercel.ts', mode: 'client' }
+    {src: '~/plugins/vercel.ts', mode: 'client'}
   ]
-});
+})
