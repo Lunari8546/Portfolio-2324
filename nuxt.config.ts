@@ -7,14 +7,16 @@ export default defineNuxtConfig({
       ]
     }
   },
-  build: {
-    transpile: ['three']
-  },
   modules: [
     '@nuxt/image',
+    '@tresjs/nuxt',
     '@unocss/nuxt'
   ],
   plugins: [
     {src: '~/plugins/vercel.ts', mode: 'client'}
-  ]
+  ],
+  tres: {
+    devtools: true,
+    glsl: true
+  }
 })

@@ -1,5 +1,6 @@
 <template>
   <NuxtLayout>
+    <Background/>
     <NuxtPage/>
   </NuxtLayout>
 </template>
