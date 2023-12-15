@@ -14,9 +14,6 @@
       </NuxtLink>
     </div>
     <p class="copyright">© 2023 ArizLunari, All Rights Reserved.</p>
-    <p class="credits">
-      Credits to: Nuxt 3, UnoCSS, ThreeJS, GSAP, Locomotive Scroll 5, Fontshare, and Vercel.
-    </p>
   </footer>
 </template>
 
@@ -73,7 +70,7 @@ footer {
     @apply w-[50vw] text-lg;
   }
 
-  .copyright, .credits {
+  .copyright {
     @apply text-sm;
   }
 }

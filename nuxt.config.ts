@@ -3,18 +3,20 @@ export default defineNuxtConfig({
     head: {
       title: 'ArizLunari',
       meta: [
-        { name: 'description', content: "ArizLunari's portfolio site." }
+        {name: 'description', content: "ArizLunari's portfolio."}
       ]
     }
   },
-  build: {
-    transpile: ['three']
-  },
   modules: [
     '@nuxt/image',
+    '@tresjs/nuxt',
     '@unocss/nuxt'
   ],
   plugins: [
-    { src: '~/plugins/vercel.ts', mode: 'client' }
-  ]
-});
+    {src: '~/plugins/vercel.ts', mode: 'client'}
+  ],
+  tres: {
+    devtools: true,
+    glsl: true
+  }
+})

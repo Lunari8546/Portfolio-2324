@@ -1,12 +1,11 @@
 <template>
   <NuxtLayout>
-    <NuxtPage />
+    <Background/>
+    <NuxtPage/>
   </NuxtLayout>
 </template>
 
 <style lang="postcss">
-@import 'node_modules/locomotive-scroll/dist/locomotive-scroll';
-
 ::-webkit-scrollbar {
   @apply hidden;
 }
@@ -56,7 +55,7 @@ p {
 <script setup lang="ts">
 onMounted(() => {
   import('locomotive-scroll').then(module => {
-    const locomotiveScroll = new module.default();
+    new module.default();
   });
 });
 </script>

@@ -10,12 +10,18 @@
   },
   "devDependencies": {
     "@nuxt/image": "^1.0.0-rc.1",
+    "@tresjs/cientos": "^3.6.0",
+    "@tresjs/nuxt": "^2.0.1",
+    "@tweakpane/core": "^2.0.1",
+    "@tweakpane/plugin-essentials": "^0.2.0",
     "@types/node": "^18",
+    "@types/three": "^0.158.2",
     "@unocss/nuxt": "^0.52.3",
     "@vercel/analytics": "^1.0.1",
     "gsap": "^3.12.2",
     "locomotive-scroll": "^5.0.0-beta.8",
     "nuxt": "^3.8.0",
-    "three": "^0.153.0"
+    "three": "^0.153.0",
+    "tweakpane": "^4.0.1"
   }
 }

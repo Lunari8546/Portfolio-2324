@@ -4,7 +4,7 @@
       <NuxtLink class="item btn" to="http://uniquad.vercel.app" target="_blank">
         <div class="wrapper">
           <div class="inner">
-            <img src="/images/uniquad.png" />
+            <img src="/images/uniquad.png"/>
           </div>
         </div>
         Uniquad.
@@ -13,7 +13,7 @@
       <NuxtLink class="item btn" to="https://honne.vercel.app" target="_blank">
         <div class="wrapper">
           <div class="inner">
-            <img src="/images/honne.png" />
+            <img src="/images/honne.png"/>
           </div>
         </div>
         Honne.
@@ -26,7 +26,7 @@
       >
         <div class="wrapper">
           <div class="inner">
-            <img src="/images/metamorphosis.png" />
+            <img src="/images/metamorphosis.png"/>
           </div>
         </div>
         Metamorphosis.
@@ -100,7 +100,7 @@ import gsap from "gsap";
 onMounted(() => {
   gsap
     .timeline()
-    .set(".list", { autoAlpha: 1 })
+    .set(".list", {autoAlpha: 1})
     .from(".item", {
       delay: 1,
       duration: 0.85,
@@ -108,7 +108,7 @@ onMounted(() => {
       stagger: 0.095,
       skewY: gsap.utils.wrap([-8, 8]),
     })
-    .set(".list", { pointerEvents: "all" });
+    .set(".list", {pointerEvents: "all"});
 
   gsap.defaults({
     duration: 0.55,
@@ -149,7 +149,7 @@ onMounted(() => {
       });
     };
 
-    const onMouseMove = ({ x, y }) => {
+    const onMouseMove = ({x, y}) => {
       let yOffset = itemBounds.top / wrapperBounds.height;
 
       yOffset = gsap.utils.mapRange(0, 1.5, -150, 150, yOffset);
