@@ -1,8 +1,8 @@
 <template>
   <div class="hero">
     <div class="intro">
-      <h1 class="title">Frontend Developer,</h1>
-      <p class="subtitle">based in Australia.</p>
+      <h1 class="title">{{ title }}</h1>
+      <p class="subtitle">{{ subtitle }}</p>
     </div>
   </div>
 </template>
@@ -45,3 +45,10 @@
   }
 }
 </style>
+
+<script setup lang="ts">
+defineProps<{
+  title: string,
+  subtitle?: string
+}>();
+</script>

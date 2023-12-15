@@ -4,8 +4,7 @@
       <h1 class="brand">arizlunari.</h1>
     </NuxtLink>
     <nav>
-      <NuxtLink>biography.</NuxtLink>
-      <NuxtLink>projects.</NuxtLink>
+      <NuxtLink to="about">about.</NuxtLink>
     </nav>
   </header>
 </template>
