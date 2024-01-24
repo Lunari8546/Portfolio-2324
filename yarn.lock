@@ -625,6 +625,13 @@
   resolved "https://registry.yarnpkg.com/@headlessui/vue/-/vue-1.7.16.tgz#bdc9d32d329248910325539b99e6abfce0c69f89"
   integrity sha512-nKT+nf/q6x198SsyK54mSszaQl/z+QxtASmgMEJtpxSX2Q0OPJX0upS/9daDyiECpeAsvjkoOrm2O/6PyBQ+Qg==
 
+"@hypernym/nuxt-gsap@^2.4.2":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@hypernym/nuxt-gsap/-/nuxt-gsap-2.4.2.tgz#5f0ec928749c36041a50fa53e649a49af544f516"
+  integrity sha512-Oep+0ABn58PbJo4tX8A8ja2hGjjBtyFE7DJAF/q8DIDGXMFaZlTbvcreCmMdKhuJ5NR8ODE0fEObUEYci901gg==
+  dependencies:
+    gsap "^3.12.2"
+
 "@iconify-json/heroicons@^1.1.15":
   version "1.1.16"
   resolved "https://registry.yarnpkg.com/@iconify-json/heroicons/-/heroicons-1.1.16.tgz#0975921e9f1b6ff0b5cb975874beaae634d49f0f"
@@ -1420,10 +1427,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/merge-streams/-/merge-streams-1.0.0.tgz#9cd84cc15bc865a5ca35fcaae198eb899f7b5c90"
   integrity sha512-rUV5WyJrJLoloD4NDN1V1+LDMDWOa4OTsT4yYJwQNpTU6FWxkxHpL7eu4w+DmiH8x/EAM1otkPE1+LaspIbplw==
 
-"@studio-freight/lenis@1.0.29":
-  version "1.0.29"
-  resolved "https://registry.yarnpkg.com/@studio-freight/lenis/-/lenis-1.0.29.tgz#d7fcbf16c2ca1ddcb0d19007851e2920006985d4"
-  integrity sha512-z/qS8ato5m2wlxQREYj5iALcxMrhhm06vEiLqYzLI+3HmpPzPscmJ8cXNiay4bj692vOot2hyTA3WP++AQVoKA==
+"@studio-freight/lenis@^1.0.34":
+  version "1.0.34"
+  resolved "https://registry.yarnpkg.com/@studio-freight/lenis/-/lenis-1.0.34.tgz#1078ee81aa8a2a1ab9f332d60d9148b8909b53af"
+  integrity sha512-sEyzEjfAsTlFgDebMYT5G7tlB0ZHhWkHEoJj0g7W0YYZO093Mh4MU65o1qbNKwRacspdU04ZrA+5Wxwt4dsS7Q==
 
 "@tailwindcss/aspect-ratio@^0.4.2":
   version "0.4.2"
@@ -4556,13 +4563,6 @@ locate-path@^6.0.0:
   integrity sha512-iPZK6eYjbxRu3uB4/WZ3EsEIMJFMqAoopl3R+zuq0UjcAm/MO6KCweDgPfP3elTztoKP3KtnVHxTn2NHBSDVUw==
   dependencies:
     p-locate "^5.0.0"
-
-locomotive-scroll@^5.0.0-beta.8:
-  version "5.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/locomotive-scroll/-/locomotive-scroll-5.0.0-beta.11.tgz#68bd81795f73a748b2958d5a75943f41f3c5c5cf"
-  integrity sha512-FQm0Yjk9X+euXmiaKVRVQNw/WuQXoTBp9eqPyZqsXDSwuiedaoJzzC0SGBM9CZRJ4tKaCHGa3pfp6CFgPyEq6Q==
-  dependencies:
-    "@studio-freight/lenis" "1.0.29"
 
 lodash._reinterpolate@^3.0.0:
   version "3.0.0"

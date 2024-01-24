@@ -1,13 +1,11 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'ArizLunari',
-      meta: [
-        {name: 'description', content: "ArizLunari's portfolio."}
-      ]
+      title: 'ArizLunari'
     }
   },
   modules: [
+    '@hypernym/nuxt-gsap',
     '@nuxt/image',
     '@tresjs/nuxt',
     '@unocss/nuxt'

@@ -54,8 +54,6 @@ p {
 
 <script setup lang="ts">
 onMounted(() => {
-  import('locomotive-scroll').then(module => {
-    new module.default();
-  });
-});
+  useSmoothScroll();
+})
 </script>

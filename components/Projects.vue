@@ -82,6 +82,8 @@
 </style>
 
 <script setup lang="ts">
+const {$gsap} = useNuxtApp();
+
 const projects = [
   {
     name: "uniquad",
@@ -95,10 +97,8 @@ const projects = [
 
 const projectList = ref([]);
 
-import gsap from "gsap";
-
 onMounted(() => {
-  gsap
+  $gsap
     .timeline()
     .set(".list", {autoAlpha: 1})
     .from(".item", {
@@ -106,11 +106,11 @@ onMounted(() => {
       duration: 0.85,
       xPercent: 25,
       stagger: 0.095,
-      skewY: gsap.utils.wrap([-8, 8]),
+      skewY: $gsap.utils.wrap([-8, 8]),
     })
     .set(".list", {pointerEvents: "all"});
 
-  gsap.defaults({
+  $gsap.defaults({
     duration: 0.55,
     ease: "expo.out",
   });
@@ -124,14 +124,14 @@ onMounted(() => {
     let itemBounds = item.getBoundingClientRect();
 
     const onMouseEnter = () => {
-      gsap.set(wrapper, {
+      $gsap.set(wrapper, {
         scale: 0.8,
         xPercent: 25,
         yPercent: 25,
         rotation: -15,
       });
 
-      gsap.to(wrapper, {
+      $gsap.to(wrapper, {
         opacity: 1,
         scale: 1,
         yPercent: 0,
@@ -140,7 +140,7 @@ onMounted(() => {
     };
 
     const onMouseLeave = () => {
-      gsap.to(wrapper, {
+      $gsap.to(wrapper, {
         opacity: 0,
         yPercent: -25,
         xPercent: 25,
@@ -154,7 +154,7 @@ onMounted(() => {
 
       yOffset = gsap.utils.mapRange(0, 1.5, -150, 150, yOffset);
 
-      gsap.to(wrapper, {
+      $gsap.to(wrapper, {
         duration: 1.25,
         x: Math.abs(x - itemBounds.left) - wrapperBounds.width / 1.5,
         y:
