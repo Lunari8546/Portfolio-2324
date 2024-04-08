@@ -1,11 +1,11 @@
 <template>
-  <section :id=heading>
+  <section :id="heading">
     <div class="info">
       <h2># {{ heading }}.</h2>
-      <hr/>
+      <hr />
     </div>
     <div class="content">
-      <slot/>
+      <slot />
     </div>
   </section>
 </template>
@@ -50,6 +50,6 @@ section {
 
 <script setup lang="ts">
 defineProps<{
-  'heading': string
+  heading: string;
 }>();
 </script>

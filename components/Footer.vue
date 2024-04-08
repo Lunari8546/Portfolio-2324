@@ -5,15 +5,21 @@
       <span class="underlined">awesome</span>.
     </h1>
     <div class="contact">
-      <NuxtLink class="btn" to="https://www.instagram.com/lunari.cr/" target="_blank">
+      <NuxtLink
+        class="btn"
+        to="https://www.instagram.com/lunari.cr/"
+        target="_blank"
+      >
         instagram.
       </NuxtLink>
-      <NuxtLink class="btn" to="mailto:arizlunari@protonmail.com">email.</NuxtLink>
+      <NuxtLink class="btn" to="mailto:arizlunari@protonmail.com"
+        >email.</NuxtLink
+      >
       <NuxtLink class="btn" to="https://github.com/Lunari8546" target="_blank">
         github.
       </NuxtLink>
     </div>
-    <p class="copyright">© 2023 ArizLunari, All Rights Reserved.</p>
+    <p class="copyright">© 2024 ArizLunari, All Rights Reserved.</p>
   </footer>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout>
-    <Background/>
-    <NuxtPage/>
+    <Background />
+    <NuxtPage />
   </NuxtLayout>
 </template>
 
@@ -55,5 +55,5 @@ p {
 <script setup lang="ts">
 onMounted(() => {
   useSmoothScroll();
-})
+});
 </script>

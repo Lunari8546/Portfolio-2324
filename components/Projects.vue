@@ -4,7 +4,7 @@
       <NuxtLink class="item btn" to="http://uniquad.vercel.app" target="_blank">
         <div class="wrapper">
           <div class="inner">
-            <img src="/images/uniquad.png"/>
+            <img src="/images/uniquad.png" />
           </div>
         </div>
         Uniquad.
@@ -13,7 +13,7 @@
       <NuxtLink class="item btn" to="https://honne.vercel.app" target="_blank">
         <div class="wrapper">
           <div class="inner">
-            <img src="/images/honne.png"/>
+            <img src="/images/honne.png" />
           </div>
         </div>
         Honne.
@@ -26,11 +26,37 @@
       >
         <div class="wrapper">
           <div class="inner">
-            <img src="/images/metamorphosis.png"/>
+            <img src="/images/metamorphosis.png" />
           </div>
         </div>
         Metamorphosis.
         <p class="year">2023</p>
+      </NuxtLink>
+      <NuxtLink
+        class="item btn"
+        to="https://github.com/TeamHarTex/HarTex"
+        target="_blank"
+      >
+        <div class="wrapper">
+          <div class="inner">
+            <img src="/images/hartex.png" />
+          </div>
+        </div>
+        HarTex.
+        <p class="year">2024</p>
+      </NuxtLink>
+      <NuxtLink
+        class="item btn"
+        to="https://github.com/QuartzGraphics/Quartz"
+        target="_blank"
+      >
+        <div class="wrapper">
+          <div class="inner">
+            <img src="/images/quartz.png" />
+          </div>
+        </div>
+        Quartz.
+        <p class="year">2024</p>
       </NuxtLink>
     </div>
   </Section>
@@ -46,7 +72,7 @@
 }
 
 .list .item:not(:last-child) {
-  @apply mb-12;
+  @apply mb-6;
 }
 
 .list .item .year {
@@ -54,17 +80,14 @@
 }
 
 .list .item .wrapper {
-  @apply absolute opacity-0;
-  @apply w-xl h-sm border-rd;
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+  @apply absolute opacity-0 z-99;
+  @apply w-xl h-sm pointer-events-none;
+  @apply top-[50%] left-[50%]
+  @apply translate-x-[-50%] translate-y-[-50%];
 }
 
 .list .item .wrapper .inner img {
-  @apply absolute t-0 l-0;
+  @apply absolute t-0 l-0 border-rd-4;
   @apply w-full h-full object-cover;
 }
 
@@ -82,25 +105,12 @@
 </style>
 
 <script setup lang="ts">
-const {$gsap} = useNuxtApp();
-
-const projects = [
-  {
-    name: "uniquad",
-    url: "https://github.com/Lunari8546/Uniquad",
-  },
-  {
-    name: "honne",
-    url: "https://github.com/Lunari8546/Honne",
-  },
-];
-
-const projectList = ref([]);
+const { $gsap } = useNuxtApp();
 
 onMounted(() => {
   $gsap
     .timeline()
-    .set(".list", {autoAlpha: 1})
+    .set(".list", { autoAlpha: 1 })
     .from(".item", {
       delay: 1,
       duration: 0.85,
@@ -108,7 +118,7 @@ onMounted(() => {
       stagger: 0.095,
       skewY: $gsap.utils.wrap([-8, 8]),
     })
-    .set(".list", {pointerEvents: "all"});
+    .set(".list", { pointerEvents: "all" });
 
   $gsap.defaults({
     duration: 0.55,
@@ -119,9 +129,6 @@ onMounted(() => {
 
   items.forEach((item) => {
     const wrapper = item.querySelector(".wrapper");
-    const wrapperBounds = wrapper?.getBoundingClientRect();
-
-    let itemBounds = item.getBoundingClientRect();
 
     const onMouseEnter = () => {
       $gsap.set(wrapper, {
@@ -149,24 +156,8 @@ onMounted(() => {
       });
     };
 
-    const onMouseMove = ({x, y}) => {
-      let yOffset = itemBounds.top / wrapperBounds.height;
-
-      yOffset = gsap.utils.mapRange(0, 1.5, -150, 150, yOffset);
-
-      $gsap.to(wrapper, {
-        duration: 1.25,
-        x: Math.abs(x - itemBounds.left) - wrapperBounds.width / 1.5,
-        y:
-          Math.abs(y - itemBounds.top) -
-          wrapperBounds.height / 1.5 -
-          yOffset * 2,
-      });
-    };
-
     item.addEventListener("mouseenter", onMouseEnter);
     item.addEventListener("mouseleave", onMouseLeave);
-    item.addEventListener("mousemove", onMouseMove);
   });
 });
 </script>

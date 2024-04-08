@@ -1,3 +1,3 @@
 <template>
-  <Landing title="About Me,"/>
+  <Landing title="About Me," />
 </template>
