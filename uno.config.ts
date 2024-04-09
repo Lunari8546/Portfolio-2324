@@ -2,20 +2,18 @@ import {
   defineConfig,
   presetUno,
   presetWebFonts,
-  transformerDirectives
-} from 'unocss';
+  transformerDirectives,
+} from "unocss";
 
 export default defineConfig({
   presets: [
     presetUno(),
     presetWebFonts({
-      provider: 'fontshare',
+      provider: "fontshare",
       fonts: {
-        sans: 'Satoshi'
-      }
-    })
+        sans: "Satoshi",
+      },
+    }),
   ],
-  transformers: [
-    transformerDirectives()
-  ]
-})
+  transformers: [transformerDirectives()],
+});
