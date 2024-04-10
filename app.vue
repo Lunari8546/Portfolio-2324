@@ -1,6 +1,6 @@
 <template>
+  <Background />
   <NuxtLayout>
-    <Background />
     <NuxtPage />
   </NuxtLayout>
 </template>

@@ -1,5 +1,6 @@
 <template>
-  <div class="flex justify-center items-center h-screen">
+  <div class="flex flex-col justify-center items-center h-screen">
+    <p class="mb-10">Variable font weight on hover</p>
     <p ref="target" class="text-6xl select-none opacity-100 font-100"></p>
   </div>
 </template>
@@ -8,7 +9,7 @@
 const { $gsap } = useNuxtApp();
 
 definePageMeta({
-  layout: "playground",
+  layout: "workshop",
 });
 
 const maxDistance = 200;
@@ -28,7 +29,7 @@ watch([x, y], () => {
     const itemCenterY = itemRect.top + itemRect.height / 2 + window.scrollY;
 
     const distance = Math.sqrt(
-      Math.pow(x.value - itemCenterX, 2) + Math.pow(y.value - itemCenterY, 2)
+      Math.pow(x.value - itemCenterX, 2) + Math.pow(y.value - itemCenterY, 2),
     );
 
     let fontWeight =
@@ -38,11 +39,11 @@ watch([x, y], () => {
             maxDistance,
             minFontWeight,
             maxFontWeight,
-            Math.max(0, maxDistance - distance)
+            Math.max(0, maxDistance - distance),
           )
         : minFontWeight;
 
-    $gsap.to(letter, { fontWeight, duration: 0.2 });
+    $gsap.to(letter, { fontWeight, duration: 0.5 });
   });
 });
 
