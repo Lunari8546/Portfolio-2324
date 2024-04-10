@@ -1,6 +1,6 @@
 <template>
   <Landing
-    title="Freelance Developer,"
+    title="Creative Developer,"
     subtitle="based in Australia & Hong Kong."
   />
   <Projects />

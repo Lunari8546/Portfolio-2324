@@ -1,6 +1,6 @@
 <template>
+  <Background />
   <NuxtLayout>
-    <Background />
     <NuxtPage />
   </NuxtLayout>
 </template>
@@ -13,11 +13,11 @@
 * {
   @apply m-0 p-0 box-border;
   @apply font-sans text-violet-100;
-  @apply select-none outline-none;
+  @apply outline-none;
 }
 
 a {
-  @apply decoration-none cursor-pointer lowercase;
+  @apply decoration-none cursor-pointer lowercase select-none;
 }
 
 body {
@@ -53,6 +53,19 @@ p {
 </style>
 
 <script setup lang="ts">
+useHead({
+  title: "ArizLunari",
+  htmlAttrs: {
+    lang: "en",
+  },
+  link: [
+    {
+      rel: "icon",
+      href: "/favicon.ico",
+    },
+  ],
+});
+
 onMounted(() => {
   useSmoothScroll();
 });
