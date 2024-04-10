@@ -32,7 +32,7 @@ import { Color } from "three";
 const palette = [
   new Color(0xd27685),
   new Color(0x9e4784),
-  new Color(0x66347f),
+  new Color(0xf5f5f5),
   new Color(0x37306b),
 ];
 

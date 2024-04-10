@@ -1,9 +1,4 @@
 export default defineNuxtConfig({
-  app: {
-    head: {
-      title: "ArizLunari",
-    },
-  },
   modules: [
     "@hypernym/nuxt-gsap",
     "@nuxt/image",

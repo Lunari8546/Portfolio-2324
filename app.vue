@@ -53,6 +53,19 @@ p {
 </style>
 
 <script setup lang="ts">
+useHead({
+  title: "ArizLunari",
+  htmlAttrs: {
+    lang: "en",
+  },
+  link: [
+    {
+      rel: "icon",
+      href: "/favicon.ico",
+    },
+  ],
+});
+
 onMounted(() => {
   useSmoothScroll();
 });
