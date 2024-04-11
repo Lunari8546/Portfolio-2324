@@ -21,6 +21,7 @@
     "@types/three": "^0.158.2",
     "@unocss/nuxt": "^0.52.3",
     "@vercel/analytics": "^1.0.1",
+    "@vercel/speed-insights": "^1.0.10",
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
     "nuxt": "^3.8.0",

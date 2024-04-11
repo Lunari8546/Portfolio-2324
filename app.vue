@@ -1,5 +1,6 @@
 <template>
   <Background />
+  <SpeedInsights />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
@@ -53,6 +54,8 @@ p {
 </style>
 
 <script setup lang="ts">
+import { SpeedInsights } from "@vercel/speed-insights/nuxt";
+
 useHead({
   title: "ArizLunari",
   htmlAttrs: {
