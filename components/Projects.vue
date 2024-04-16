@@ -47,7 +47,7 @@
       </NuxtLink>
       <NuxtLink
         class="item btn"
-        to="https://github.com/QuartzGraphics/Quartz"
+        to="https://github.com/StudiosConcertos/Quartz"
         target="_blank"
       >
         <div class="wrapper">
